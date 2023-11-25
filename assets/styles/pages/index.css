@@ -1,0 +1,90 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.post__large {
+    width: 50%;
+}
+time{
+    font-size: 12px;
+    color: grey;
+}
+.post__small {
+    width: calc(50% - 1em);
+    margin-left: 1em;
+}
+.post__thumbnail img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+.first-post{
+    width: 100%;
+    border-radius: 1rem;
+}
+.quarter-post{
+    width: 100%;
+    border-radius: 1rem;
+}
+.img-wrapper_first-post{
+    overflow: hidden;
+    height: 26rem;
+    border-radius: 1rem 1rem 0 0;
+}
+.img-wrapper_quarter-post{
+    overflow: hidden;
+    height: 10rem;
+    border-radius: 1rem 1rem 0 0;
+}
+.img-wrapper_sixpack{
+    overflow: hidden;
+    height: 8rem;
+    border-radius: 1rem 1rem 0 0;
+}
+.img-wrapper_thumbnail img{
+    width: 100%;
+    border-radius: 0.75rem;
+}
+.post-tags{
+    margin: -0.8rem 2rem;
+}
+.title-environment a{
+    color: #FF674D;
+}
+.border-environment{
+    border-bottom: 4px solid #AFE0B1;
+}
+.title-geopolitics a{
+    color: #4E3FFC;
+}
+.border-geopolitics{
+    border-bottom: 4px solid #FFEC51;
+}
+.title-recycling a{
+    color: #6A994E;
+}
+.border-recycling{
+    border-bottom: 4px solid #5BD0D6;
+}
+.title-international a{
+    color: #3DAFB5;
+}
+.border-international{
+    border-bottom: 4px solid #BE7C4D;
+}
+.title-wildlife a{
+    color: #BE7C4D;
+}
+.border-wildlife{
+    border-bottom: 4px solid #6A994E;
+}
+.ads{
+    background: #fff;
+}
+@media(max-width:1100px){
+    .img-wrapper_first-post{
+        height: 14rem;
+    }
+}

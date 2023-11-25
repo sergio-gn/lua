@@ -1,0 +1,3 @@
+[submodule "assets/styles/vendor/simple-grid"]
+	path = assets/styles/vendor/simple-grid
+	url = https://github.com/benchmarkstudios/simple-grid.git

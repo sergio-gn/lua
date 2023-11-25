@@ -1,0 +1,179 @@
+p, span {
+    font-family: system-ui;
+}
+article{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align:justify;
+}
+article p{
+    margin-top: 1em;
+}
+article img {
+    width: 100%!important;
+    height: auto!important;
+    margin: 1rem 0;
+}
+.mainpost{
+    padding-bottom: 5rem;
+}
+.featured-image-wrapper {
+    max-height: 15rem;
+    overflow: hidden;
+}
+.featured-image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+.post__title{
+    color: #FF433A;
+    margin: 1rem 0;
+}
+.sidebar{
+    right: 2rem;
+    border-radius: 1rem;
+}
+.sidebar li{
+    list-style:none;
+    margin-top: 2em;
+}
+.post-tags{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.sidebar-title{
+    color: #245309;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+.container-blog {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.recent-posts-title{
+    font-size:1rem;
+    margin: 0;
+}
+.button-share{
+    background:none;
+    border:none;
+}
+.button-share:hover{
+    transform: scale(1.1);
+}
+/* Comments Container */
+.comments-area {
+    padding: 20px;
+    background-color: #fff; /* Background color for the comments section */
+    border: 1px solid #e0e0e0; /* Border color */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+/* Comments Title */
+.comments-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333; /* Text color for the comments title */
+}
+
+/* Comment List */
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Comment */
+.comment {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Background color for each comment */
+    border: 1px solid #e0e0e0; /* Border color */
+    border-radius: 5px;
+}
+
+/* Comment Author */
+.comment .comment-author {
+    font-weight: 600;
+    color: #333; /* Text color for the comment author's name */
+}
+
+/* Comment Date */
+.comment .comment-date {
+    color: #999; /* Text color for the comment date */
+}
+
+/* Comment Content */
+.comment .comment-content {
+    margin-top: 10px;
+    color: #555; /* Text color for the comment content */
+}
+
+/* Comment Reply Link */
+.comment .comment-reply-link {
+    color: #007bff; /* Link color for the "Reply" link */
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.comment .comment-reply-link:hover {
+    text-decoration: underline;
+}
+
+/* Comment Form */
+.comment-form {
+    margin-top: 30px;
+}
+
+/* Comment Form Textarea */
+.comment-form textarea {
+    width: 100%;
+    border: 1px solid #e0e0e0; /* Border color for the comment textarea */
+    border-radius: 5px;
+}
+
+/* Comment Form Submit Button */
+.comment-form input[type="submit"] {
+    background-color: #007bff; /* Background color for the submit button */
+    color: #fff; /* Text color for the submit button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-form input[type="submit"]:hover {
+    background-color: #0056b3; /* Hover background color */
+}
+
+@media(max-width:1100px){
+    .post__title{
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 768px) {
+  .container-blog {
+    width: 750px;
+  }
+}
+@media (min-width: 1024px) {
+  .container-blog {
+    width: 900px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-blog {
+    width: 1200px;
+  }
+}
+@media (min-width: 1700px) {
+  .container-blog {
+    width: 1500px;
+  }
+}
