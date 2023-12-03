@@ -3,7 +3,7 @@ Theme Name: Abrap
 Theme URI: https://abrap.com/
 Author: Abrap
 Author URI: https://abrap.com/
-Description: Estreitar o relacionamento e fortalecer a união dos Advogados, Procuradores, Assistentes e Assessores
+Description: Estreitar o relacionamento e fortalecer a uniao dos Advogados, Procuradores, Assistentes e Assessores
 Version: 3.X
 License: MITgap
 License URI: https://mit-license.org/
@@ -42,6 +42,48 @@ header nav {
 .scalable-div {
     transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
+.col-12{
+    width: 100%;
+}
+.president-section{
+    background: linear-gradient(to right, #007831, #85C128);
+    color:#fff;
+    margin: 3rem 0;
+}
+.president-square{
+    background: #85C128;
+    margin-top: -2rem;
+    border-radius: 1rem 1rem 0 0;
+    font-size: 3rem;
+    text-align:center;
+    font-weight: 700;
+    font-family: system-ui;
+}
+.directors{
+    background: linear-gradient(to right, #007831, #036897);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: system-ui;
+    margin-bottom: 2rem;
+}
+.border-radius-1{
+    border-radius: 1rem;
+}
+.center-h-v{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+@media(min-width:1100px){
+    .col-lg-4{
+        width: 33.3333333%;
+    }
+}
 
 /* Apply a scale transformation on hover */
 .scalable-div:hover {
@@ -50,6 +92,9 @@ header nav {
 .main-logo{
     max-width:100px;
     height:auto;
+}
+p{
+    font-family: system-ui;;
 }
 #logo {
 	display: block;
@@ -74,14 +119,15 @@ nav:after {
 
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
-nav ul {
-	float: right;
-	padding:0;
-	margin:0;
-	list-style: none;
-	position: relative;
+.footer__nfavigation ul{
+    display: flex;
+    flex-direction: column;
+    float: unset;
+    padding: unset;
+    margin: unset;
+    list-style: unset;
+    position: unset;
 }
-	
 /* Positioning the navigation items inline */
 nav ul li {
 	margin: 0px;
@@ -304,7 +350,7 @@ html,body {
     overflow-x: hidden
 }
 .bg-primary{
-    background-color:#FFFFF2;
+    background-color:#EFEFEF;
 }
 .bg-secondary{
     background-color:#565661;
@@ -487,6 +533,9 @@ html,body {
 .p-4 {
     padding: 4rem
 }
+.pb-1{
+    padding-bottom: 1rem
+}
 .p-button {
     padding: .7rem 2rem
 }
@@ -668,6 +717,37 @@ html,body {
 .align-center {
     align-self: center
 }
+.flex-d-column{
+    flex-direction: column;
+}
+.bg-darkgreen{
+    background: #6A994E;
+}
+.text-black{
+    color:#000;
+}
+.text-grey{
+    color:#3A3A3A;
+}
+.image-wrapper{
+    overflow: hidden;
+}
+.image-object-fit{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.image-s1{
+    width: 300px;
+    height: 300px;
+}
+.image-s2{
+    width: 300px;
+    height: 400px;
+}
+.card-s2{
+    width:300px;
+}
 .d-block {
     display: block
 }
@@ -676,6 +756,9 @@ html,body {
 }
 .flex-d-reverse {
     flex-direction: row-reverse!important
+}
+.justify-space-evenly{
+    justify-content: space-evenly;
 }
 .d-grid{
     display:grid;
@@ -740,16 +823,21 @@ html,body {
 .bg-1 {
     background: #62C3C4
 }
-
 .bg-2 {
     background: #E9E9E9
 }
 .bg-3{
     background: #AFE0B1;
 }
-
+.banner-green{
+    background: #007831;
+    padding: 3rem 0;
+}
 .border-r-005 {
     border-radius: .5rem
+}
+.border-r-1-0{
+    border-radius: 1rem 1rem 0 0;
 }
 
 .border-r-1 {
@@ -761,7 +849,6 @@ html,body {
 .border-r-3 {
     border-radius: 3rem
 }
-
 .border-r-5 {
     border-radius: 5rem
 }
@@ -818,25 +905,10 @@ html,body {
 .pc-flex {
     display: none
 }
-
-.wpcf7-response-output {
-    border: unset;
-    padding: 1rem;
-    background: #ddd;
-    border-radius: .75rem;
-    font-family: 'Inter'
-}
-
-.wpcf7-not-valid-tip {
-    color: #f7ff7a;
-    font-size: 1rem;
-    font-family: 'Inter';
-    font-weight: 400;
-    display: block
-}
 .d-flex-pc{
     display:none;
 }
+
 @media (min-width: 1100px) {
     
     .col-xl {
@@ -1350,47 +1422,7 @@ ul li ul:hover {
     color: white;
     font-size: 1rem
 }
-/**** Contact Form ********/
-.wpcf7{
-    display:flex;
-}
-.wpcf7-form{
-    display:flex;
-    padding: 1rem 0;
-}
-.wpcf7-form p{
-    display: flex;
-    align-items: center;
-}
-.wpcf7-form input{
-    padding: 1rem;
-    border: none;
-    border-radius: 0.3rem;
-    caret-color: #f9520b;
-    color: #fff;
-    width: 10rem;
-}
 
-.wpcf7-submit{
-    background: #f9520b;
-    border-radius: 0.3rem;
-    padding: 0.7rem 2rem;
-    cursor: pointer;
-    color: #fff;
-}
-.wpcf7-submit:hover{
-    box-shadow: 0 0.875em 1.875em 0 #f5474820;
-    transform: translate3d(0,-0.1em,0) scale(1.01);
-}
-.wpcf7-form span{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 1rem 0 0;
-}
-.wpcf7-text{
-    background: #ffffff40;
-}
 input::placeholder {
     color: #ffffff70;
 }
