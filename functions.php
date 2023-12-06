@@ -1,79 +1,78 @@
 <?php
 
-// Adiciona um shortcode para exibir o formulário de cadastro
-function custom_registration_form_shortcode() {
-    ob_start();
-    ?>
-    <form id="registration-form" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post" style="
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    ">
-        <label for="username" style="
-            display: block;
-            margin-bottom: 10px;
-        ">Nome de Usuário:</label>
-        <input type="text" name="username" required style="
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-        ">
+function custom_excerpt() {
+  $content = get_the_content();
+  $content_lines = substr_count($content, "\n");
 
-        <label for="email" style="
-            display: block;
-            margin-bottom: 10px;
-        ">Email:</label>
-        <input type="email" name="email" required style="
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-        ">
+  if ($content_lines >= 4) {
+    return get_the_excerpt();
+  } else {
+    return get_the_content();
+  }
+ }
 
-        <label for="password" style="
-            display: block;
-            margin-bottom: 10px;
-        ">Senha (mínimo 8 caracteres):</label>
-        <input type="password" name="password" required style="
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-        ">
+ function custom_read_more_link() {
+    return '<a href="' . esc_url(get_permalink()) . '" title="' . the_title_attribute(['echo' => false]) . '" class="read-more-link">' . esc_html__('Ler mais', 'text_domain') . '</a>';
+ }
 
-        <input type="submit" name="submit" value="Cadastrar" style="
-            background-color: #4caf50;
-            color: white;
-            cursor: pointer;
-        ">
-    </form>
-    <?php
-    return ob_get_clean();
+// Limita o número de posts por página para 10
+function custom_posts_per_page( $query ) {
+  if ( is_admin() || ! $query->is_main_query() ) {
+    return;
+  }
+
+  if ( is_home() || is_archive() || is_search() ) {
+    $query->set( 'posts_per_page', 10 );
+  }
 }
-add_shortcode('registration_form', 'custom_registration_form_shortcode');
+add_action( 'pre_get_posts', 'custom_posts_per_page' );
 
-// Processa o formulário de registro quando enviado
-function custom_registration_form_handler() {
-    if (isset($_POST['submit'])) {
-        $username = sanitize_user($_POST['username']);
-        $email = sanitize_email($_POST['email']);
-        $password = $_POST['password'];
 
-        // Verifica se a senha tem pelo menos 8 caracteres
-        if (strlen($password) < 8) {
-            echo 'A senha deve ter pelo menos 8 caracteres.';
-            return;
-        }
+function handle_vote() {
+  $post_id = $_POST['post_id'];
+  $vote_type = $_POST['vote_type'];
 
-        $user_id = wp_create_user($username, $password, $email);
+  $vote_count = intval(get_post_meta($post_id, 'vote_count', true));
+  $vote_count = ($vote_count) ? $vote_count : 0;
 
-        if (!is_wp_error($user_id)) {
-            // Registro bem-sucedido
-            echo 'Registro bem-sucedido!';
-        } else {
-            // Houve um erro no registro
-            echo 'Erro ao registrar: ' . $user_id->get_error_message();
-        }
-    }
+  if (!is_user_logged_in()) {
+    wp_send_json_error(array('message' => 'Usuário não autenticado.'));
+  }
+
+  if ($vote_type === 'upvote') {
+    $vote_count++;
+  } elseif ($vote_type === 'downvote') {
+    $vote_count--;
+  } elseif ($vote_type === 'reset') {
+    $vote_count = 0;
+  }
+
+  update_post_meta($post_id, 'vote_count', $vote_count);
+
+  wp_send_json_success(array('vote_count' => $vote_count));
 }
-add_action('init', 'custom_registration_form_handler');
+
+add_action('wp_ajax_handle_vote', 'handle_vote');
+add_action('wp_ajax_nopriv_handle_vote', 'handle_vote');
+
+
+function load_jquery() {
+  wp_enqueue_script('jquery');
+}
+
+add_action('wp_enqueue_scripts', 'load_jquery');
+
+
+function enqueue_custom_scripts() {
+  // Carregar a biblioteca jQuery
+  wp_enqueue_script('jquery');
+
+  // Carregar o script personalizado
+  wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
+
+  // Passar a variável ajaxurl e informações do usuário para o script
+  wp_localize_script('custom-script', 'ajaxurl', admin_url('admin-ajax.php'));
+  wp_localize_script('custom-script', 'userLoggedIn', is_user_logged_in());
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');

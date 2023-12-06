@@ -11,3 +11,217 @@ Text Domain: partyhunter
 */
 
 
+/* Reset de Estilos (Opcional - Pode ser substituído por um arquivo de reset CSS) */
+figure, h1, h2, h3, h4, h5, h6, p, blockquote, dl, dd, ol, ul, fieldset, legend, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout Básico */
+body {
+font-family: Arial, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+background-color: #f4f4f4;
+padding: 60px;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+/* Header Fixo no Topo */
+#site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #800080; /* Violeta */
+    color: #fff;
+    height: 60px; /* Ajuste a altura do header aqui */
+    z-index: 1000; /* Garante que o header esteja acima de outros elementos */
+    display: flex;
+    justify-content: space-between; /* Adicionado para alinhar itens à esquerda e à direita */
+    align-items: center; /* Adicionado para centralizar verticalmente */
+ }
+
+ .site-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+ }
+
+ .site-title a {
+    color: #fff;
+    text-decoration: none;
+ }
+
+ .site-description {
+    color: #ddd;
+ }
+
+ /* Botões de Cadastro/Login */
+ .header-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Alterado para alinhar à direita */
+    margin-right: 10px;
+}
+
+ .header-buttons a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-left: 10px; /* Adicionado espaçamento à esquerda */
+ }
+
+ .header-buttons a:hover {
+    background-color: #fff;
+    color: #333;
+ }
+
+ /* Navigation */
+ #site-navigation {
+    margin-top: 10px;
+ }
+
+ .main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+
+ .main-navigation li {
+    display: inline-block;
+    margin-right: 20px;
+ }
+
+ .main-navigation a {
+    color: #fff;
+    text-decoration: none;
+ }
+
+
+.entry-title {
+    color: #000;
+    text-decoration-line: none;
+}
+
+ /* Footer Fixo no Fundo */
+ #site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Cinza */
+    color: #fff;
+    padding: 10px 0; /* Ajuste a altura do footer aqui */
+    z-index: 1000; /* Garante que o footer esteja acima de outros elementos */
+ }
+
+.site-info {
+text-align: center;
+}
+
+
+/* Estilo para os botões no header */
+.header-buttons {
+    float: right;
+}
+
+.header-buttons a {
+margin-left: 10px;
+color: #fff; /* Cor do texto */
+text-decoration: none;
+padding: 5px 10px;
+border: 1px solid #fff; /* Borda */
+border-radius: 5px; /* Cantos arredondados */
+}
+
+.header-buttons a:hover {
+background-color: #fff; /* Cor de fundo ao passar o mouse */
+color: #333; /* Cor do texto ao passar o mouse */
+}
+
+
+
+/* Estilos para a estrutura de colunas */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .post-container {
+    display: flex;
+    margin-bottom: 20px;
+ }
+
+ .post-box {
+    flex: 0 0 75%;
+    padding: 15px;
+    box-sizing: border-box;
+ }
+
+ .related-info-column {
+    flex: 0 0 25%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #f4f4f4; /* Cor de fundo para a coluna de informações relacionadas */
+ }
+
+ /* Estilos para o título do post e link "Ler mais" */
+ .entry-title a {
+    color: #333;
+    text-decoration: none;
+ }
+
+ .read-more-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0073e6; /* Cor do link "Ler mais" */
+    text-decoration: none;
+ }
+
+ .read-more-link:hover {
+    text-decoration: underline;
+ }
+
+ /* Estilos para o conteúdo da postagem e informações relacionadas */
+ .entry-content,
+ .related-info-column p {
+    color: #555;
+ }
+
+
+
+
+
+/* Responsividade (Exemplo básico - Adapte conforme necessário) */
+@media screen and (max-width: 768px) {
+#site-navigation {
+    text-align: center;
+}
+
+.main-navigation ul {
+    display: block;
+    text-align: center;
+}
+
+.main-navigation li {
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+}
+}
+
+/* Adicione isso ao seu arquivo de estilo CSS */
+.processing {
+  pointer-events: none;
+  opacity: 0.5;
+}
